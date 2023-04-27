@@ -5,6 +5,9 @@ on:
     branches: [master]
   pull_request:
 
+env:
+  LINUX_DEPENDENCIES: libclang-dev clang llvm
+
 jobs:
 
   test:
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y ${LINUX_DEPENDENCIES}
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
@@ -24,6 +29,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y ${LINUX_DEPENDENCIES}
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
@@ -37,6 +44,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y ${LINUX_DEPENDENCIES}
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
@@ -50,6 +59,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y ${LINUX_DEPENDENCIES}
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
@@ -64,6 +75,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y ${LINUX_DEPENDENCIES}
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: stable
